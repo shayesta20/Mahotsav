@@ -1,0 +1,30 @@
+Mahotsav 2026 Web App Solution
+
+Overview:
+- PHP/MySQL-based event registration portal for "Vignan Mahotsav 2026".
+- Uses session-based authentication, secure password hashing, and user profile management.
+- Includes a public landing page, registration form, login, authenticated dashboard, profile editing, password change, and event registration flow.
+
+Key Files:
+- config.php: Database connection setup, session_start(), MHID generation helper, HTML escaping helper.
+- index.php: Public landing page with festival details and links to Register/Login.
+- register.php: Participant signup page with validation (email, phone, password strength, matching passwords), inserts user into MySQL, generates MHID.
+- login.php: Login page verifying MHID/password and redirecting authenticated users to dashboard.php.
+- dashboard.php: Authenticated dashboard displaying profile details, event cards, registered events listing, change password and logout options.
+- edit_profile.php: Profile editing page for updating user details.
+- change_password.php: Password change form with current password verification and new password update.
+
+Security & Features:
+- Passwords stored with PHP password_hash and verified with password_verify.
+- Form input validation for registration and login.
+- Session-based access control for profile and dashboard pages.
+- Clean UI styling in HTML/CSS with a dark purple festival theme.
+
+How to access the details:
+- Open this file in the workspace: solution_details.txt
+- Web app root: c:\xampp\htdocs\mahotsav
+- Visit via browser: http://localhost/mahotsav/index.php (if XAMPP is running and Apache is configured)
+
+Notes:
+- Ensure the MySQL database named `vignan_mahotsav` exists and that a `users` table is present with expected fields.
+- The app currently references additional event-related pages in some UI elements, but the core pages above are the implemented solution.
